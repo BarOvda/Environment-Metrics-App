@@ -20,17 +20,9 @@
                         id="navbarDropdownMenuLink">{{monitorType.Name}}</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <div *ngFor="let monitor of getMonitors(monitorType.Id)">
-                            <a class="nav-link dropdown-item" routerLink="courses/followed-courses">{{monitor.Name}}</a>
+                            <a class="nav-link dropdown-item" (click)="openDialog(monitorType)">{{monitor.Name}}</a>
                         </div>
                     </div>
-                    <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <div>
-                            <a class="nav-link dropdown-item" routerLink="/">My Courses</a>
-                        </div>
-                        <div>
-                            <a class="dropdown-item" routerLink="/">Follow Courses</a>
-                        </div>
-                    </div> -->
                 </li>
             </ul>
         </div>

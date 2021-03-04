@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment';
 import { Legends } from '../models/Legends';
 import { Monitor } from '../models/Monitor';
 import { MonitorType } from '../models/MonitorType';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { LegendsComponent } from '../legends/legends.component';
 
 @Component({
   selector: 'app-header',
@@ -12,20 +14,20 @@ import { MonitorType } from '../models/MonitorType';
 })
 export class HeaderComponent implements OnInit {
   collapsed = true;
-  dataUrl:string = "sLUfkgNM";
-  
-  monitorTypes:MonitorType[];
-  monitors:Monitor[];
-  legends:Legends[];
+  dataUrl: string = "sLUfkgNM";
+
+  monitorTypes: MonitorType[];
+  monitors: Monitor[];
+  legends: Legends[];
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getLegendsData();
   }
 
-  getLegendsData(){
+  getLegendsData() {
     let headers = new HttpHeaders();
     // headers = headers.set('Access-Control-Allow-Origin', '*');
     // headers = headers.set('Content-Type', 'application/json; charset=UTF-8');
@@ -34,19 +36,36 @@ export class HeaderComponent implements OnInit {
 
 
     this.http.get<any>(`${environment.apiUrl}/${this.dataUrl}`)
-      .toPromise().then(json=>{
+      .toPromise().then(json => {
         this.legends = json.Legends;
         this.monitorTypes = json.MonitorType;
         this.monitors = json.Monitor;
-        console.log(json);
-        console.log(this.legends);
-        console.log(this.monitorTypes);
-        console.log(this.monitors);
+        // console.log(json);
+        // console.log(this.legends);
+        // console.log(this.monitorTypes);
+        // console.log(this.monitors);
       })
   }
-  getMonitors(monitorTypeId:number){
-    console.log(monitorTypeId);
-    return this.monitors.filter(monitor=>monitor.MonitorTypeId==monitorTypeId);
+  getMonitors(monitorTypeId: number) {
+    return this.monitors.filter(monitor => monitor.MonitorTypeId == monitorTypeId);
   }
 
+  openDialog(selectedMonitorType:MonitorType) {
+    const legendsData = this.legends.filter(legend => selectedMonitorType.LegentId==legend.Id);
+    console.log(legendsData);
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "270px"
+    // dialogConfig.height = "500px"
+    dialogConfig.data = {
+      LegendsIds: 1,
+      title: 'ADD NOTIFICATION',
+    };
+    const dialogRef = this.dialog.open(LegendsComponent, dialogConfig
+    );
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
 }
