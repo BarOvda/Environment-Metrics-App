@@ -44,5 +44,9 @@ export class HeaderComponent implements OnInit {
         console.log(this.monitors);
       })
   }
+  getMonitors(monitorTypeId:number){
+    console.log(monitorTypeId);
+    return this.monitors.filter(monitor=>monitor.MonitorTypeId==monitorTypeId);
+  }
 
 }
