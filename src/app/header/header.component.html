@@ -11,11 +11,15 @@
             </a>
         </div>
         <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+
             <ul class="nav navbar-nav navbar-center">
-
-                <li><a routerLink="/">Home</a></li>
-
+                
+                    <li *ngFor=" let monitorType of monitorTypes"><a (click)="logOut()" href="#" >{{monitorType.Name}}</a></li>
+                
             </ul>
+            <!-- <li><a routerLink="/">Home</a></li> -->
+
+
 
         </div>
 
