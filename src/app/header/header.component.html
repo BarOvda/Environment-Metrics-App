@@ -15,12 +15,12 @@
 
             <ul class="nav navbar-nav navbar-center">
 
-                <li *ngFor=" let monitorType of monitorTypes" class="nav-item dropdown">
+                <li *ngFor = " let monitorType of monitorTypes" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" routerLink="/"
                         id="navbarDropdownMenuLink">{{monitorType.Name}}</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <div *ngFor="let monitor of getMonitors(monitorType.Id)">
-                            <a class="nav-link dropdown-item" (click)="openDialog(monitorType)">{{monitor.Name}}</a>
+                            <a class="nav-link dropdown-item" (click)="openDialog(monitorType,monitor.Name)">{{monitor.Name}}</a>
                         </div>
                     </div>
                 </li>

@@ -50,8 +50,13 @@ export class HeaderComponent implements OnInit {
     return this.monitors.filter(monitor => monitor.MonitorTypeId == monitorTypeId);
   }
 
-  openDialog(selectedMonitorType:MonitorType) {
-    const legendsData = this.legends.filter(legend => selectedMonitorType.LegentId==legend.Id);
+  openDialog(selectedMonitorType: MonitorType, monitorName: string) {
+    let legendsData;
+    this.legends
+      .forEach(legend => {
+        if (selectedMonitorType.LegentId == legend.Id)
+          legendsData = legend;
+      });
     console.log(legendsData);
     const dialogConfig = new MatDialogConfig();
 
@@ -60,8 +65,8 @@ export class HeaderComponent implements OnInit {
     dialogConfig.width = "270px"
     // dialogConfig.height = "500px"
     dialogConfig.data = {
-      LegendsIds: 1,
-      title: 'ADD NOTIFICATION',
+      Legends: legendsData,
+      monitorName: monitorName,
     };
     const dialogRef = this.dialog.open(LegendsComponent, dialogConfig
     );

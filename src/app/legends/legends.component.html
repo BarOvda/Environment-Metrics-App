@@ -1,1 +1,16 @@
-<p>legends works!</p>
+<h1 mat-dialog-title>{{monitorName}}</h1>
+<div mat-dialog-content class="mat-dialog-content">
+    <ul>
+        <div class="tag-item">
+
+        <li *ngFor="let tag of tags">
+                <div [ngStyle]="{'background-color': tag.Color}" class="color-display"></div>
+                <p>{{tag.Label}}</p>
+        </li>
+    </div>
+
+    </ul>
+</div>
+<div mat-dialog-actions class="mat-dialog-actions">
+    <button mat-button (click)="close()" mat-dialog-close class="mat-raised-button">Close</button>
+</div>

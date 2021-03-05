@@ -1,0 +1,22 @@
+.actions{
+    text-align: center;
+    margin-top: 15px;
+}
+h1{
+    text-align: center;
+}
+button{
+    margin-left: 5px;
+}
+.color-display{
+    width: 15px;
+    height: 15px;
+}
+li{
+    list-style: none;
+}
+.tag-item{
+    float: left;
+    overflow:hidden;
+
+}
