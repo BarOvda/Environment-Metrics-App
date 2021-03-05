@@ -1,22 +1,37 @@
 .actions{
     text-align: center;
     margin-top: 15px;
+    margin: auto;
+  
+    width: min-content;
 }
 h1{
     text-align: center;
 }
-button{
-    margin-left: 5px;
-}
-.color-display{
-    width: 15px;
-    height: 15px;
-}
+
+
 li{
     list-style: none;
+    margin-top: 4px;
 }
-.tag-item{
-    float: left;
-    overflow:hidden;
+
+
+.my-table{
+    display:table;
+    height: 12px;
 
 }
+.my-table-cell{
+    display:table-cell;
+}
+.cell-color{
+    width: 20px;
+}
+.cell-label{
+    padding-left: 10px;
+    
+}
+p{
+    margin: auto;
+}
+        

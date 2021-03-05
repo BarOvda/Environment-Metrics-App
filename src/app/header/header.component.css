@@ -40,4 +40,7 @@
     border-radius: 50%;
 
   }
- 
+  .collapsed{
+    float: right;
+    margin-left: 100px;
+  }

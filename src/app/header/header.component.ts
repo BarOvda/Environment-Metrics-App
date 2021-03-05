@@ -62,7 +62,7 @@ export class HeaderComponent implements OnInit {
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "270px"
+   // dialogConfig.width = "270px"
     // dialogConfig.height = "500px"
     dialogConfig.data = {
       Legends: legendsData,

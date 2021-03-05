@@ -28,7 +28,8 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     MatCommonModule, 
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+
     
   ],
   entryComponents: [

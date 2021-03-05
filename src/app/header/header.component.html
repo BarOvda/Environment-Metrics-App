@@ -10,10 +10,11 @@
                 </div>
             </a>
         </div>
-        <!-- <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true"> -->
-        <div>
-
-            <ul class="nav navbar-nav navbar-center">
+        <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+            
+            
+            <ul [ngClass]="collapsed?'nav navbar-nav navbar-center':'nav navbar-nav pull-right'">
+                
 
                 <li *ngFor = " let monitorType of monitorTypes" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" routerLink="/"
