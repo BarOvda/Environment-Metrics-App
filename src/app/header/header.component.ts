@@ -28,22 +28,12 @@ export class HeaderComponent implements OnInit {
   }
 
   getLegendsData() {
-    let headers = new HttpHeaders();
-    // headers = headers.set('Access-Control-Allow-Origin', '*');
-    // headers = headers.set('Content-Type', 'application/json; charset=UTF-8');
-
-    const options = { headers: headers };
-
 
     this.http.get<any>(`${environment.apiUrl}/${this.dataUrl}`)
       .toPromise().then(json => {
         this.legends = json.Legends;
         this.monitorTypes = json.MonitorType;
         this.monitors = json.Monitor;
-        // console.log(json);
-        // console.log(this.legends);
-        // console.log(this.monitorTypes);
-        // console.log(this.monitors);
       })
   }
   getMonitors(monitorTypeId: number) {
@@ -62,8 +52,7 @@ export class HeaderComponent implements OnInit {
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-   // dialogConfig.width = "270px"
-    // dialogConfig.height = "500px"
+
     dialogConfig.data = {
       Legends: legendsData,
       monitorName: monitorName,

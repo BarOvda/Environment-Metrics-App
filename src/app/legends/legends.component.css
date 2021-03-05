@@ -9,7 +9,9 @@ h1{
     text-align: center;
 }
 
-
+.dialog-header{
+    background-color: rgba(0, 0, 0, 0.281);
+}
 li{
     list-style: none;
     margin-top: 4px;

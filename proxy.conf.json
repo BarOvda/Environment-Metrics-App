@@ -1,6 +1,10 @@
 {
     "/api": {
-        "target": "https://pastebin.com",
-        "secure": false
+      "target": "https://pastebin.com/raw/4qB26gbx",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
     }
-}
+  }

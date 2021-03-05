@@ -10,16 +10,19 @@ import { Legends } from '../models/Legends';
 export class LegendsComponent implements OnInit {
   legend: Legends;
   monitorName: string;
-  tags:[{Label:string,Color:string}];
+
+  tags: [{ Label: string, Color: string }];
   constructor(private dialogRef: MatDialogRef<LegendsComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
     this.legend = data.Legends;
     this.monitorName = data.monitorName;
   }
+
   @HostListener('window:keyup.esc') onKeyUp() {
     this.dialogRef.close();
   }
   ngOnInit(): void {
+
     console.log(this.legend);
     this.tags = this.legend.tags;
     console.log(this.tags);

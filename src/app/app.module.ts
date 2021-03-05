@@ -12,12 +12,14 @@ import { MatCommonModule } from '@angular/material/core';
 import { MatButtonModule } from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LegendsComponent
+    LegendsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

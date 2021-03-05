@@ -1,16 +1,18 @@
-<h1 mat-dialog-title>{{monitorName}}</h1>
+<h1 mat-dialog-title class="dialog-header">{{monitorName}}</h1>
 <div mat-dialog-content class="mat-dialog-content">
     <ul>
         <div class="tag-item">
 
-            <li *ngFor="let tag of tags" >
+            <li *ngFor="let tag of tags">
 
-                <div class="my-table" >
+                <div class="my-table">
                     <div [ngStyle]="{'background-color': tag.Color}" class="my-table-cell cell-color"></div>
-                    <div id="solution" class="my-table-cell cell-label"><p>{{tag.Label}}</p></div>
+                    <div id="solution" class="my-table-cell cell-label">
+                        <p>{{tag.Label}}</p>
+                    </div>
                 </div>
-                <div  class="color-display"></div>
-                
+                <div class="color-display"></div>
+
             </li>
         </div>
 
