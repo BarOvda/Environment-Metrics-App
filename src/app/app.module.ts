@@ -13,6 +13,7 @@ import { MatButtonModule } from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
+import {  MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HomeComponent } from './home/home.component';
     MatCommonModule, 
     MatButtonModule,
     MatFormFieldModule,
+    MatSnackBarModule
 
     
   ],

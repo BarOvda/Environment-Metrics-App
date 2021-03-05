@@ -23,9 +23,7 @@ export class LegendsComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    console.log(this.legend);
     this.tags = this.legend.tags;
-    console.log(this.tags);
   }
   close() {
     this.dialogRef.close();

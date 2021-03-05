@@ -47,7 +47,6 @@ export class HeaderComponent implements OnInit {
         if (selectedMonitorType.LegentId == legend.Id)
           legendsData = legend;
       });
-    console.log(legendsData);
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
