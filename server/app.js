@@ -1,4 +1,3 @@
-const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -33,4 +32,3 @@ app.use((error, req, res, next) => {
 
 
 app.listen(8082)
-  .catch(err => console.log(err));

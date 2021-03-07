@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://pastebin.com/raw'
+  apiUrl: 'http://localhost:8082'
 
 };
 

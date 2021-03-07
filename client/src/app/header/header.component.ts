@@ -29,11 +29,12 @@ export class HeaderComponent implements OnInit {
 
   getLegendsData() {
 
-    this.http.get<any>(`${environment.apiUrl}/${this.dataUrl}`)
+    this.http.get<any>(`${environment.apiUrl}/legends/get-legends`)
       .toPromise().then(json => {
-        this.legends = json.Legends;
-        this.monitorTypes = json.MonitorType;
-        this.monitors = json.Monitor;
+        console.log(json);
+        this.legends = json.data.Legends;
+        this.monitorTypes = json.data.MonitorType;
+        this.monitors = json.data.Monitor;
       })
   }
   getMonitors(monitorTypeId: number) {
